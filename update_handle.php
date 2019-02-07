@@ -12,19 +12,16 @@
   if (empty($title) || empty($desc) || empty($salary) || empty($deadline) || empty($link) ) { 
     die('il faut tout remplier');
   } else { 
+    // 更新資料
+    $sql = "UPDATE jobs SET title='$title', description = '$desc',salary='$salary',deadline = '$deadline',link = '$link' WHERE id = " .$id;
+    $update = $db->prepare($sql);
+    $result = $update->execute(array($title, $desc, $salary, $deadline, $link));
 
-  // 更新資料
-  $sql = "UPDATE jobs SET title='$title', description = '$desc',salary='$salary',deadline = '$deadline',link = '$link' WHERE id = " .$id;
-  $update = $db->prepare($sql);
-  $result = $update->execute(array($title, $desc, $salary, $deadline, $link));
-
-  if ($result) {  
-    header('Location: ./index.php');
-  } else {  
-    echo 'failed';
-    die($e->getMessage()); 
-  }
-  
-
+    if ($result) {  
+      header('Location: ./index.php');
+    } else {  
+      echo 'failed';
+      die($e->getMessage()); 
+    }
   }
 ?>

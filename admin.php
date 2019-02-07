@@ -11,6 +11,7 @@
       $select = $db->prepare($sql); 
       $select -> execute($results);
       $results = $select->fetchAll(PDO::FETCH_ASSOC); //fatchAll要依照取的資料型態下參數
+
       foreach($results as $result){
         //將查詢出的資料輸出
         echo "<div class='job'>";
@@ -19,13 +20,10 @@
         echo "<p class='job__salary'>" .$result['salary'] . "</p>";
         echo "<p class='job__deadline'>" .$result['deadline'] ."</p>";
         echo "<a href='".$result['link']."' class='link' target='_blank'>plus info</a><br>";
-        // echo "<a href='admin.php' class='bnt'>  Edit</a> ";
-
         echo "<div class='job__foot'>";
         echo  "<a href='./update.php?id=".$result['id']."' class='bnt'>Update</a>";
         echo  "<a href='./delete.php?id=".$result['id']."' class='bnt'>Delete</a>";
         echo "</div>";
-
         echo "</div>";
       }
       ?>

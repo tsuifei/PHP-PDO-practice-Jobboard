@@ -37,7 +37,6 @@ a:hover,
 a:active {
   color: var(--main-link-color);
   font-weight: 700;
-  
 }
 
 header {
@@ -59,13 +58,14 @@ header {
   margin-top: 15px;
 }
 
-#nav a{
+#nav a {
   color: #fff;
 }
+
 #nav ul {
   list-style: none;
-  /* margin-left: 53px; */
 }
+
 #nav li {
   display: inline-block;
   padding: 10px;
@@ -81,12 +81,12 @@ header {
   /* background-color: rgb(174, 218, 175); */
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.24),
   0 0px 5px 0 rgba(0, 0, 0, 0.24);
-  
 }
 
 .jobs{
   margin-top: 100px;
 }
+
 .job {
   margin: 0px auto;
   width: 600px;
@@ -125,6 +125,7 @@ margin-top: 20px;
 p ~ p{  
 margin-top: 10px;
 }
+
 /* form */
 form input,
 form textarea,

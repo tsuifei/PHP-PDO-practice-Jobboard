@@ -6,6 +6,7 @@
   $salary = $_POST['salary'];
   $deadline = $_POST['deadline'];
   $link = $_POST['link'];
+  
   // 確認是否可從form拿到資料
   // echo $title . ' ' . $desc . ' ' . $salary . ' ' . $deadline . ' ' . $link;
 
