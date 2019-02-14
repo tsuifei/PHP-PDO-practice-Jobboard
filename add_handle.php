@@ -1,5 +1,5 @@
 <?php
-  require_once('./conn.php');
+  require_once('../conn42.php');
 
   $title = $_POST['title'];
   $desc = $_POST['description'];
