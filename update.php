@@ -19,7 +19,8 @@
           <input name="deadline" type="date" value="<?php echo $row['deadline']?>" placeholder="Deadline">
           <input name="link" type="text" value="<?php echo $row['link']?>" placeholder="Link">
           
-          <input type="hidden" name="id" value="<?php echo $row['id']?>"><!-- 把ID藏在這裡待過去update handle -->
+          <input type="hidden" name="id" value="<?php echo $row['id']?>">
+          <!-- 把ID藏在這裡待過去update handle -->
           <input type="submit" value="Update">
         </form>
         </div>

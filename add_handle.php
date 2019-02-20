@@ -1,11 +1,12 @@
 <?php
   require_once('../conn42.php');
+  require_once('./utils/utils.php');
 
-  $title = $_POST['title'];
-  $desc = $_POST['description'];
-  $salary = $_POST['salary'];
-  $deadline = $_POST['deadline'];
-  $link = $_POST['link'];
+  $title = escapeIn($_POST['title']);
+  $desc = escapeIn($_POST['description']);
+  $salary = escapeIn($_POST['salary']);
+  $deadline = escapeIn($_POST['deadline']);
+  $link = escapeIn($_POST['link']);
   
   // 確認是否可從form拿到資料
   // echo $title . ' ' . $desc . ' ' . $salary . ' ' . $deadline . ' ' . $link;
@@ -17,9 +18,9 @@
   } else { 
 
     // 新增資料
-  $sql = "INSERT INTO jobs(title,description,salary,deadline,link) values(?,?,?,?,?)";
-  $insert = $db->prepare($sql);
-  $result = $insert->execute(array($title,$desc, $salary, $deadline, $link));
+    $sql = "INSERT INTO jobs(title,description,salary,deadline,link) values(?,?,?,?,?)";
+    $insert = $db->prepare($sql);
+    $result = $insert->execute(array($title,$desc, $salary, $deadline, $link));
 
   if ($result) {  
     header('Location: ./index.php');
